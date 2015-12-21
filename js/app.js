@@ -1,11 +1,15 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
+var Accounts = require('./components/Accounts.js');
+
 var Main = React.createClass({
 
   render: function(){    
     return( 
-      <div>Onlinebank</div>
+      <div>
+      	<Accounts />
+      </div>
     );
   }
 });

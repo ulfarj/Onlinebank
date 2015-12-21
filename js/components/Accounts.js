@@ -1,7 +1,7 @@
 var React = require('react');
 var $ = require ('jquery');
 
-
+var Account = require('./account.js');
 var Table = require('react-bootstrap').Table;
 var FontAwesome = require('react-fontawesome');
 
@@ -43,17 +43,16 @@ var Accounts = React.createClass({
 	render: function()
 	{
 
-		var accounts = this.state.accounts.map(function(account) {
-            return (
-            	
-              	<tr key={account.AccountId}>              		
+/*<tr key={account.AccountId} onClick={e => this.setState({ target: e.target, show[account.AccountId]: !this.state.show })}>              		
               		<td><FontAwesome name='plus-square' style={plusSquare} /></td>
               		<td>{account.Name}</td>
               		<td>{account.AccountNumber}</td>
               		<td>{account.AccountHolderName}</td>
               		<td>{account.Balance}</td>              		
-              	</tr>              	                    	
-              	
+              	</tr>      */
+		var accounts = this.state.accounts.map(function(account) {
+            return (
+            	<Account account={account} />
               );
           });
 
@@ -86,6 +85,5 @@ var plusArea={
 	width: '5'	
 };
 
-var plusSquare={};
 
 module.exports = Accounts;

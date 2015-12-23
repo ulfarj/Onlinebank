@@ -1,58 +1,55 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
+var Router = require('react-router');
+var Route = require('react-router').Route;
+var Router = require('react-router').Router;
+
+var Header = require('./components/Header.js');
 var Accounts = require('./components/Accounts.js');
 
-var Main = React.createClass({
+var HomePage = React.createClass({
+	render: function(){
+		return(
+			<div>
+				<Header />
+				<div style={mainArea}>
+					Home
+				</div>
+			</div>
+		);
+	}
+});
+
+var AccountPage = React.createClass({
 
   render: function(){    
     return(
-    	<div style={container}>
-    	  <div style={headerArea}></div>	
-    	  <div style={mainArea}>
-	    	  <div style={menuArea}></div>
-		      <div style={contentArea}>
-		      	<div>
-		      		<Accounts />
-		      	</div>
-		      </div>
-	      </div>
-	      <div style={footerArea}></div>
+    	<div>
+    	  <Header />	
+    	  <div style={mainArea}>	    	  	        	  
+		   	<Accounts />
+		   </div>	      
 	     </div>	    
     );
   }
 });
 
-var container={
-	/*backgroundColor: '#F8F8F8'*/
-};
-
-var headerArea={
-	height: '100',
-	backgroundColor: '#2C3E50'	
-};
-
-var mainArea = {
-	display: 'flex',
-  	flexDirection: 'row'	
-};
-
-var menuArea = {
-	flex: 2
-};
-
-var contentArea = {
-	flex: 8,
+var mainArea = {	
 	paddingTop: '30',
 	paddingBottom: '50',
 	paddingRight: '10',
-	/*paddingLeft: '10',	*/
-	backgroundColor: '#fff'
+	paddingLeft: '10'
 };
 
-var footerArea = {
-	height: '150',
-	backgroundColor: '#5A6467'
-};
+var routes = (
+	<Router>
+	  <Route path="/" component={HomePage}></Route>
+	  <Route path="/Accounts" component={AccountPage}></Route>
+  	</Router>
+);
 
-ReactDOM.render(<Main />, document.getElementById('app'));
+ReactDOM.render(
+	routes, 
+	document.getElementById('app')
+);

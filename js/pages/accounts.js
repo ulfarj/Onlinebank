@@ -1,6 +1,6 @@
 var React = require('react');
-var Header = require('../components/Header.js');
-var Accounts = require('../components/Accounts.js');
+var Header = require('../components/header.js');
+var Accounts = require('../components/accounts.js');
 
 var AccountsPage = React.createClass({
 

@@ -12,18 +12,26 @@ var Header = React.createClass({
     return (
       <Sticky stickyStyle={headerArea}>          
           <div style={headerNav}>            
-            <a href="/#" style={headerNavLink}>
+            <a href="/#" style={firstHeaderNavLink}>
               <FontAwesome name="home" style={headerNavIcon} size='3x' />Home
             </a>
             <a href="/#/Accounts" style={headerNavLink}>
-              <FontAwesome name="money" style={headerNavIcon} size='3x' />Accounts
+              <FontAwesome name="usd" style={headerNavIcon} size='3x' />Accounts
+            </a>
+            <a href="/#/Transactions" style={headerNavLink}>
+              <FontAwesome name="money" style={headerNavIcon} size='3x' />Transactions
+            </a>
+            <a href="/#/Loans" style={headerNavLink}>
+              <FontAwesome name="bar-chart" style={headerNavIcon} size='3x' />Loans
+            </a>
+            <a href="/#/Transfer" style={headerNavLink}>
+              <FontAwesome name="arrows-h" style={headerNavIcon} size='3x' />Transfer
             </a>
           </div>
       </Sticky>
     );
   },
 });
-
 
 var headerArea={
   height: '100',
@@ -34,6 +42,13 @@ var headerNav={
   paddingTop: '20',  
   display: 'flex',
   flexDirection: 'row'  
+};
+
+var firstHeaderNavLink={  
+  paddingLeft: '120',
+  color: '#fff',
+  display: 'block',
+  textDecoration: 'none'    
 };
 
 var headerNavLink={

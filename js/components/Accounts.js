@@ -4,7 +4,7 @@ var $ = require ('jquery');
 var Table = require('react-bootstrap').Table;
 var FontAwesome = require('react-fontawesome');
 
-var Loader = require('./loader.js')
+var Loader = require('./loader.js');
 
 var AccountRow = require('./accountRow.js');
 
@@ -24,11 +24,19 @@ var Accounts = React.createClass({
 
 	fetchData: function(){
 	
+		var token = localStorage.token;
+
+		var headers = {};
+        if (token) {
+            headers.Authorization = 'Bearer ' + token;
+        }
+
 		$.ajax({
 	      type: "GET",
-	      url: 'http://217.28.191.124/ibankingwebapi/api/deposit',
+	      url: 'http://localhost:49544/api/deposit',
 	      dataType: 'json',
 	      contentType: "application/json; charset=utf-8",
+	      headers: headers,
 	      success: function(accounts) {	      	
 	        this.setState({accounts: accounts});
 	        this.setState({loaded: true});

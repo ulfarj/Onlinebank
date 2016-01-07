@@ -9,6 +9,7 @@ var Accounts = require('./pages/accounts.js');
 var Transactions = require('./pages/transactions.js');
 var Loans = require('./pages/loans.js');
 var Transfer = require('./pages/transfer.js');
+var Login = require('./pages/login.js');
 
 var Routes = React.createClass({
 
@@ -20,6 +21,7 @@ var Routes = React.createClass({
 	  		<Route path="/Transactions" component={Transactions}></Route>
 	  		<Route path="/Loans" component={Loans}></Route>
 	  		<Route path="/Transfer" component={Transfer}></Route>
+	  		<Route path="/Login" component={Login}></Route>
 	  	</Router>    
     );
   }

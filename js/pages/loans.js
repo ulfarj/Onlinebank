@@ -1,5 +1,7 @@
 var React = require('react');
 var Header = require('../components/header.js');
+var Loans = require('../components/loans.js');
+
 
 var LoansPage = React.createClass({
 	render: function(){
@@ -7,7 +9,7 @@ var LoansPage = React.createClass({
 			<div>
 				<Header />
 				<div style={mainArea}>
-					Loans
+					<Loans />
 				</div>
 			</div>
 		);

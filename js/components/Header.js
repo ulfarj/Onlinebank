@@ -5,13 +5,17 @@ var Grid = require('react-bootstrap').Grid;
 var Row = require('react-bootstrap').Row;
 var Col = require('react-bootstrap').Col;
 
+var Img = require('react-bootstrap').Img;
+
 var FontAwesome = require('react-fontawesome');
  
 var Header = React.createClass({
   render: function() {
     return (
       <Sticky stickyStyle={headerArea}>          
-          <div style={headerNav}>            
+          <div style={headerNav}>
+            <img src="../../img/decoration.png" style={decoration}  />
+              
             <a href="/#" style={firstHeaderNavLink}>
               <FontAwesome name="home" style={headerNavIcon} size='3x' />Home
             </a>
@@ -33,25 +37,31 @@ var Header = React.createClass({
   },
 });
 
-var headerArea={
-  height: '100',
-  backgroundColor: '#4EAACC'  
+var decoration={
+  left: '-40',
+  position: 'absolute'
 };
 
-var headerNav={
-  paddingTop: '20',  
+var headerArea={
+  height: '100',
+  backgroundColor: '#2C3E50'  
+};
+
+var headerNav={    
   display: 'flex',
   flexDirection: 'row'  
 };
 
 var firstHeaderNavLink={  
-  paddingLeft: '120',
+  paddingTop: '20',
+  paddingLeft: '180',
   color: '#fff',
   display: 'block',
   textDecoration: 'none'    
 };
 
 var headerNavLink={
+  paddingTop: '20',
   paddingLeft: '60',
   color: '#fff',
   display: 'block',

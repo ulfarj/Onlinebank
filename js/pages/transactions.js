@@ -1,5 +1,7 @@
 var React = require('react');
 var Header = require('../components/header.js');
+var AccountsDropdown = require('../components/AccountsDropdown.js');
+var Transactions = require('../components/transactions.js');
 
 var TransactionsPage = React.createClass({
 	render: function(){
@@ -7,7 +9,11 @@ var TransactionsPage = React.createClass({
 			<div>
 				<Header />
 				<div style={mainArea}>
-					Transactions
+
+					<AccountsDropdown />
+
+					
+					
 				</div>
 			</div>
 		);
